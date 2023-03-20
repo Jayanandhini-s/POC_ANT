@@ -19,7 +19,7 @@ namespace POC_ANTO.Controllers
         }
 
         // GET: Items
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index() 
         {
             var pOCContext = _context.Items.Include(i => i.Invoice);
             return View(await pOCContext.ToListAsync());
