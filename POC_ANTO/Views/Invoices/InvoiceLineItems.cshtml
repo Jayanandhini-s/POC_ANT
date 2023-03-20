@@ -1,0 +1,78 @@
+﻿@using POC_ANTO.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Invoice details with Line Items</h3>
+@{
+    var data = ViewBag.data;
+    var item = ViewBag.item;
+}
+<dl class="row">
+    <dt class="col-sm-2">
+       @* @Html.DisplayNameFor(model => model.Details.InvoiceId)*@ InvoiceId
+    </dt>
+    <dd class="col-sm-10">
+       @* @Html.DisplayFor(model => model.Details.InvoiceId)*@ @data.InvoiceId
+    </dd>
+    
+    <dt class="col-sm-2">
+       From
+    </dt>
+    <dd class="col-sm-10">
+        @*@Html.DisplayFor(model => model.Details.From)*@ @data.From
+    </dd>
+    <dt class="col-sm-2">
+        @*@Html.DisplayNameFor(model => model.Details.Billto)*@ Billto
+    </dt>
+    <dd class="col-sm-10">
+       @* @Html.DisplayFor(model => model.Details.Billto)*@ @data.Billto
+    </dd>
+    <dt class="col-sm-2">
+       @* @Html.DisplayNameFor(model => model.Details.Tax)*@ Tax
+    </dt>
+    <dd class="col-sm-10">
+       @* @Html.DisplayFor(model => model.Details.Tax)*@ @data.Tax
+    </dd>
+    <dt class="col-sm-2">
+       @* @Html.DisplayNameFor(model => model.Details.SubTotal)*@ SubTotal
+    </dt>
+    <dd class="col-sm-10">
+       @* @Html.DisplayFor(model => model.Details.SubTotal)*@ @data.SubTotal
+    </dd>
+    <dt class="col-sm-2">
+        @*@Html.DisplayNameFor(model => model.Details.Amount)*@ Amount
+    </dt>
+    <dd class="col-sm-10">
+        @*@Html.DisplayFor(model => model.Details.Amount)*@ @data.Amount
+    </dd>
+    <dt class="col-sm-2">
+       @* @Html.DisplayNameFor(model => model.Details.Date)*@ Date
+    </dt>
+    <dd class="col-sm-10">
+        @*@Html.DisplayFor(model => model.Details.Date)*@ @data.Date
+    </dd>
+</dl></div>
+<table class="table table-striped">
+    <thead class="table-dark"><tr><th><label>Item Name </label></th><th><label>Quantity</label></th><th><label>Unit Cost </label></th><th><label> Amount </label></th><th></th></tr></thead>
+    <tbody>
+        @foreach (var i in item)
+        {
+            <tr>
+                <td>
+                  @i.ItemName
+                </td>
+                <td>
+                    @i.Quantity
+                </td>
+                <td>
+                    @i.UnitCost
+                </td>
+                <td>
+                    @i.ItemAmount
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

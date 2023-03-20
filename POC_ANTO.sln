@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC_ANTO", "POC_ANTO\POC_ANTO.csproj", "{2179AD43-616C-404E-B71E-E99ADB3EA47D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2179AD43-616C-404E-B71E-E99ADB3EA47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2179AD43-616C-404E-B71E-E99ADB3EA47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2179AD43-616C-404E-B71E-E99ADB3EA47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2179AD43-616C-404E-B71E-E99ADB3EA47D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FA47D8D-68EF-428C-895D-C1095163E578}
+	EndGlobalSection
+EndGlobal

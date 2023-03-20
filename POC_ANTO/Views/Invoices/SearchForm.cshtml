@@ -1,0 +1,38 @@
+﻿@model POC_ANTO.Models.Item
+
+@{
+    ViewData["Title"] = "SearchForm";
+ 
+}
+<body style="background-color:white">
+    <h1>Search By Invoice Number</h1>
+
+    <style>
+        class:hover {
+            background-color: burlywood;
+        }
+    </style>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="SearchResult">
+                <div class="form-group">
+                    <label for="SearchPhrase" class="control-label text-white"></label>
+                    <input name="SearchPhrase" class="form-control" />
+                </div>
+                <br />
+                <div>
+                    <input type="submit" style="font-size:medium" value="Search" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+    </div>
+    <br />
+    @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>

@@ -1,0 +1,101 @@
+﻿@model POC_ANTO.Models.Invoice
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "formLayout";
+}
+<style>
+    .gradient-custom {
+        background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+</style>
+@if (ViewBag.Value != null)
+{
+    <script type="text/javascript">$(document).ready(function () { toastr.warning('@ViewBag.Value'); });</script>
+}
+<section class=" gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form asp-action="Create">
+                        <h3 class="mb-5">Create Invoice</h3>
+
+                        <div class="form-outline mb-4">
+                            <label asp-for="InvoiceId" class="form-label"></label>
+                            <input asp-for="InvoiceId"  class="form-control form-control-lg" />
+                            
+                            <span asp-validation-for="InvoiceId" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label asp-for="From" class="form-label"></label>
+                            <input asp-for="From"  class="form-control form-control-lg" />
+                            
+                            <span asp-validation-for="From" class="text-danger"></span>
+                        </div> 
+
+                        <div class="form-outline mb-4">
+                            <label asp-for="Billto" class="form-label"></label>
+                            <input asp-for="Billto" class="form-control form-control-lg" />
+                            
+                            <span asp-validation-for="Billto" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                                <label asp-for="Contact" class="form-label"></label>
+                            <input asp-for="Contact" class="form-control form-control-lg" />
+                            
+                            <span asp-validation-for="Contact" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label asp-for="Date" class="form-label"></label>
+                            <input asp-for="Date" class="form-control form-control-lg" />
+                            
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label asp-for="SubTotal" class="form-label"></label>
+                            <input asp-for="SubTotal" class="form-control form-control-lg" />
+                            
+                            <span asp-validation-for="SubTotal" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label asp-for="Tax" class="form-label"></label>
+                            <input asp-for="Tax" class="form-control form-control-lg" />
+                            
+                            <span asp-validation-for="Tax" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label asp-for="Amount" class="form-label"></label>
+                            <input asp-for="Amount" class="form-control form-control-lg" />
+                 
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" value="Create">Create</button>
+
+                        <hr class="my-4">
+                            <div>
+                                <a asp-action="Index">Back to List</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

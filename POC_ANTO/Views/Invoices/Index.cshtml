@@ -1,0 +1,94 @@
+﻿@model IEnumerable<POC_ANTO.Models.Invoice>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Invoice Index</h2>
+
+@if (TempData["AlertMessage"] != null)
+{
+    <script type="text/javascript">$(document).ready(function () { toastr.success('@TempData["AlertMessage"]'); });</script>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SearchResult">
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label text-white"></label>
+                <input name="SearchPhrase" class="form-control" placeholder="Search for line items by invoice number" />
+            </div>
+            <br />
+            <div>
+                <input type="submit" style="font-size:medium" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    </div>
+    <br />
+
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Billto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.From)
+            </th>            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvoiceId)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Billto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.From)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InvoiceId">Edit</a> |
+                <a asp-action="InvoiceLineItems" asp-route-id="@item.InvoiceId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InvoiceId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
